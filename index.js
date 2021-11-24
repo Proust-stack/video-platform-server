@@ -2,7 +2,6 @@ const dotenv = require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose');
-const errorHandler = require('./middleware/error');
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/users')
 const movieRoute = require("./routes/movies")
@@ -14,7 +13,7 @@ app.use(express.json())
 
 app.use(express.static('public'));
 app.use('/api/auth', authRoute)
-app.use('/api/users', userRoute)
+//app.use('/api/users', userRoute)
 app.use("/api/movies", movieRoute)
 app.use("/api/lists", listRoute)
 const PORT = process.env.PORT || 5000;
