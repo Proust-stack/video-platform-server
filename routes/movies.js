@@ -3,21 +3,23 @@ const verify = require('../verifyToken')
 const Movie = require('../models/Movie')
 
 router.post('/',  async (req, res) => {
-        const newMovie = new Movie(req.body)
-        try {
-            const savedMovie = await newMovie.save()
-            res.status(201).json(savedMovie)
-        } catch (error) {
-            res.status(403).json(error)
-        }
+    res.status(500).json('not allowed')
+        // const newMovie = new Movie(req.body)
+        // try {
+        //     const savedMovie = await newMovie.save()
+        //     res.status(201).json(savedMovie)
+        // } catch (error) {
+        //     res.status(403).json(error)
+        // }
 })
 router.put('/:id', async (req, res) => {
-        try {
-            const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true})
-            res.status(200).json(updatedMovie)
-        } catch (error) {
-            res.status(500).json(error)
-        }
+    res.status(500).json('not allowed')
+        // try {
+        //     const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true})
+        //     res.status(200).json(updatedMovie)
+        // } catch (error) {
+        //     res.status(500).json(error)
+        // }
 })
 router.delete('/:id', async (req, res) => {
         try {
